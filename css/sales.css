@@ -1,0 +1,18 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.col button.btn-secondary {
+  margin: 50px;
+  border-radius: 5px;
+}
+body {
+  background-color: lightgray;
+}
+.navbar {
+  background-color: rgb(36, 131, 19) !important;
+}
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
