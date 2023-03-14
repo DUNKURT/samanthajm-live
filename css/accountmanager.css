@@ -1,0 +1,9 @@
+body {
+  background-color: lightgray;
+}
+.navbar {
+  background-color: rgb(36, 131, 19) !important;
+}
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}

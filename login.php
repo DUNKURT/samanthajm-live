@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
     $role = $row['user_role'];
     $_SESSION['user_role'] = $role;
-    header('Location: ' . ($role == 'admin' ? 'sales.html' : 'user.php'));
+    header('Location: ' . ($role == 'admin' ? 'sales.php' : 'user.php'));
 } else {
     if (mysqli_num_rows($result) == 0) {
         echo "Invalid email or password";
