@@ -8,9 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/sales.css" />
-  <title>Samantha | Sales</title>
+  <link rel="stylesheet" href="css/accountmanager.css" />
   <link rel="icon" href="/image/SJM_Icon.png" type="image/jpg" />
+  <title>Account Manager | Samantha</title>
 </head>
 
 <body>
@@ -61,58 +61,44 @@
       </div>
     </div>
   </nav>
-  <div class="container text-center">
-    <div class="row">
-      <div class="col">
-        <button class="btn btn-success">Sales Today</button>
-      </div>
-      <div class="col">
-        <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "sale";
-        $conn = new mysqli($servername, $username, $password, $dbname);
+  <div class="container">
+    <h2>Account Manager</h2>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='create_account.html'">Add Account</button>
+    <div class="table-responsive">
+      <?php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "samantha";
 
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
+      $conn = mysqli_connect($servername, $username, $password, $dbname);
+      if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+      }
 
-        $sql = "SELECT COUNT(*) as count FROM products WHERE stock > 6";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $count = $row["count"];
+      $sql = "SELECT * FROM users WHERE user_role <> 'admin'";
+      $result = mysqli_query($conn, $sql);
 
-        echo '<button class="btn btn-primary">In Stock (' . $count . ')</button>';
+      echo '<table class="table table-bordered table-hover">';
+      echo '<thead><tr><th>ID</th><th>Email</th><th>Password</th><th>Role</th><th>Action</th></tr></thead>';
+      echo '<tbody>';
+      while ($row = mysqli_fetch_assoc($result)) {
+        echo '<tr>';
+        echo '<td>' . $row["user_id"] . '</td>';
+        echo '<td>' . $row["user_email"] . '</td>';
+        echo '<td>' . $row["user_pass"] . '</td>';
+        echo '<td>' . $row["user_role"] . '</td>';
+        echo '<td><a href="delete.php?id=' . $row["user_id"] . '">Delete</a></td>';
+        echo '</tr>';
+      }
+      echo '</tbody>';
+      echo '</table>';
 
-        $conn->close();
-        ?>
-      </div>
-      <div class="col">
-        <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "sale";
-        $conn = new mysqli($servername, $username, $password, $dbname);
+      mysqli_close($conn);
+      ?>
 
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT COUNT(*) as count FROM products WHERE stock < 6";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $count = $row["count"];
-
-        echo '<button class="btn btn-danger">Low Stock (' . $count . ')</button>';
-
-        $conn->close();
-        ?>
-      </div>
     </div>
   </div>
-
 </body>
 
 </html>
