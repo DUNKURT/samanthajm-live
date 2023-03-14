@@ -68,28 +68,23 @@
       </div>
       <div class="col">
         <?php
-        // Connect to the MySQL database
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "sale";
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // Check connection
         if ($conn->connect_error) {
           die("Connection failed: " . $conn->connect_error);
         }
 
-        // Execute the query to count the number of rows with stock less than 6
         $sql = "SELECT COUNT(*) as count FROM products WHERE stock < 6";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $count = $row["count"];
 
-        // Display the count on the button
         echo '<button class="btn btn-danger">Low Stock (' . $count . ')</button>';
 
-        // Close the database connection
         $conn->close();
         ?>
       </div>
