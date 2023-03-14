@@ -154,3 +154,6 @@ header {
   font-size: 30px;
   color: rgb(6, 148, 65);
 }
+body {
+  background-color: lightgray;
+}
