@@ -64,7 +64,26 @@
         <button class="btn btn-success">Sales Today</button>
       </div>
       <div class="col">
-        <button class="btn btn-primary">In Stock</button>
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "sale";
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT COUNT(*) as count FROM products WHERE stock > 6";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $count = $row["count"];
+
+        echo '<button class="btn btn-primary">In Stock (' . $count . ')</button>';
+
+        $conn->close();
+        ?>
       </div>
       <div class="col">
         <?php
@@ -90,6 +109,7 @@
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
