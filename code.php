@@ -14,12 +14,12 @@ if(isset($_POST['save_select']))
 
     if($query_run)
     {
-        $_SESSION['status'] = "Inserted Succesfully";
+        $_SESSION['status'] = "Added Succesfully";
         header("Location: index.php");
     }
     else
     {
-        $_SESSION['status'] = "Not Inserted";
+        $_SESSION['status'] = "Error";
         header("Location: index.php");
     }
 }
