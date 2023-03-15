@@ -14,12 +14,11 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+	 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="/image/SamanthaJM-removebg-preview.png" alt="Logo" width="140" height="50"
-            class="d-inline-block align-text-top" />
+        <a class="navbar-brand" href="#"> 
+            Samantha
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -32,10 +31,10 @@
             <a class="nav-link active" aria-current="page" href="sales.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
+            <a class="nav-link" href="read.php">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Brands</a>
+            <a class="nav-link" href="brand.php">Brands</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="inventory_report.html">Reports</a>
@@ -71,7 +70,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "sale";
+        $dbname = "samantha";
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->connect_error) {
@@ -93,7 +92,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "sale";
+        $dbname = "samantha";
         $conn = new mysqli($servername, $username, $password, $dbname);
 
         if ($conn->connect_error) {

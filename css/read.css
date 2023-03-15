@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container form {
+	width: 1000px;
+	padding: 20px;
+	border-radius: 10px;
+	
+}
+.box {
+	width: 1000px;
+}
+.container table {
+	padding: 20px;
+	border-radius: 10px;
+	
+}
+.link-right {
+	display: flex;
+	justify-content: flex-end;
+}
+.navbar {
+  background-color: rgb(36, 131, 19) !important;
+}
