@@ -10,15 +10,22 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="css/sales.css" />
   <title>Samantha | Sales</title>
-  <link rel="icon" href="/image/SJM_Icon.png" type="image/jpg" />
+  <?php
+  $imagePath = "image/SJM_Icon.png";
+  ?>
+  <link rel="icon" href="<?php echo $imagePath; ?>" type="image/png" />
+
 </head>
 
 <body>
-	 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+  <?php
+  $imagePath = "image/SamanthaJM-removebg-preview.png";
+  ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> 
-            Samantha
+        <a class="navbar-brand" href="#">
+          <img src="<?php echo $imagePath; ?>" alt="Logo" width="140" height="50">
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -37,7 +44,7 @@
             <a class="nav-link" href="brand.php">Brands</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="inventory_report.html">Reports</a>
+            <a class="nav-link" href="inventory_report.php">Reports</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +56,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <a class="dropdown-item" href="login1.php">Logout</a>
               </li>
             </ul>
           </li>

@@ -9,6 +9,8 @@ if (isset($_POST['create'])) {
 		$data = htmlspecialchars($data);
 		return $data;
 	}
+	$current_date = date("Y-m-d");
+	
 
 	$brand = validate($_POST['brand']);
 	$status = validate($_POST['status']);
@@ -19,8 +21,8 @@ if (empty($brand)) {
 	}elseif (empty($status)) {
 		header("Location: ../index.php?error=Status is required&$product_data");
 	} else {
-		$sql = "INSERT INTO brand(brand, status) 
-               VALUES('$brand','$status')";
+		$sql = "INSERT INTO brand(brand, status, last_updated) 
+               VALUES('$brand','$status','$current_date')";
 		$result = mysqli_query($conn, $sql);
 		if ($result) {
 			header("Location: ../brand.php?success=successfully created");

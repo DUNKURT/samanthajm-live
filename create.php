@@ -6,6 +6,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<?php
+	$imagePath = "image/SJM_Icon.png";
+	?>
+	<link rel="icon" href="<?php echo $imagePath; ?>" type="image/png" />
 </head>
 
 <body>
@@ -13,7 +17,7 @@
 		<form action="php/create.php" method="post">
 			<h4 class="display-4 text-center">Create</h4>
 			<hr><br>
-			<?php if (isset($_GET['error'])) { ?>
+					<?php if (isset($_GET['error'])) { ?>
 				<div class="alert alert-danger" role="alert">
 					<?php echo $_GET['error']; ?>
 				</div>

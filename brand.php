@@ -14,14 +14,21 @@
       src="https://kit.fontawesome.com/e96c3f3ee3.js"
       crossorigin="anonymous"
     ></script>
+    <?php
+  $imagePath = "image/SJM_Icon.png";
+  ?>
+  <link rel="icon" href="<?php echo $imagePath; ?>" type="image/png" />
 	<link rel="stylesheet" href="css/read.css" />
 </head>
 <body>
-	 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+  <?php
+  $imagePath = "image/SamanthaJM-removebg-preview.png";
+  ?>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> 
-            Samantha
+        <a class="navbar-brand" href="#">
+          <img src="<?php echo $imagePath; ?>" alt="Logo" width="140" height="50">
         </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -40,7 +47,7 @@
             <a class="nav-link" href="brand.php">Brands</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="inventory_report.html">Reports</a>
+            <a class="nav-link" href="inventory_report.php">Reports</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +59,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <a class="dropdown-item" href="login1.php">Logout</a>
               </li>
             </ul>
           </li>
@@ -63,19 +70,19 @@
       </div>
     </div>
   </nav>
-	<div class="container">
-		<div class="box">
-			<h4 class="display-4 text-center">Brands</h4><br>
+  <div class="container">
+    <div class="box">
+      <h4 class="display-4 text-center">Brands</h4><br>
 <!-- 	
-				<a href="create.php" class="link-primary">Create</a> -->
-				<button  
+        <a href="create.php" class="link-primary">Create</a> -->
+        <button  
   class="btn btn-primary"
   name="update"
   onclick="window.location.href='create_brand.php'">
   Create
 </button>
 
-			<?php if (isset($_GET['success'])) { ?>
+      <?php if (isset($_GET['success'])) { ?>
 		    <div class="alert alert-success" role="alert">
 			  <?php echo $_GET['success']; ?>
 		    </div>
