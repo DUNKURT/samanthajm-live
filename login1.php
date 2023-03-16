@@ -13,7 +13,7 @@
   ?>
   <link rel="icon" href="<?php echo $imagePaths; ?>" type="image/png" />
   <?php
-  $imagePath = "image/SamanthaJM_1.0.png";
+  $imagePath = "image/Samantha1.png";
   ?>
   <link rel="icon" href="<?php echo $imagePath; ?>" type="image/png" />
   <style>
