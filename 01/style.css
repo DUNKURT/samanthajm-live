@@ -1,0 +1,27 @@
+body{
+    background-color: #019b43;
+    
+}  
+  h2{
+    color:white;
+    text-align: center;
+   }
+ label{
+    width: 240px;
+    display:inline-block;
+    text-align: right;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+ }
+ input {
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 240px;
+    margin: 10px;     
+ }
+ input#submit:hover{
+    background-color: white;
+    color: #48b778;
+ }
